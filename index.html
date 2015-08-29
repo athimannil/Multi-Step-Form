@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vaidhyasala registration</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/app.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body ng-controller="registrationController">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="#">Title</a>
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h3>Vaidhyasala Whatsapp group registration form</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maxime excepturi vitae error libero perspiciatis accusamus nemo odit ipsum consectetur nulla assumenda explicabo unde, dolores iste possimus, vel distinctio quis.</p>
+				</div>
+			</div>
+			<form ng-submit="addUser();">
+				<div class="form-horizontal">
+					<h3 class="page-header">Personal details</h3>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">First Name</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.firstName" placeholder="First Name">
+						</div>
+						<label class="col-sm-2 control-label">Last Name</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.lastName" placeholder="Last Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Gender</label>
+						<div class="col-sm-4">
+								<label class="checkbox-inline">
+								  <input type="radio" ng-model="userData.gender" value="male"> Male
+								</label>
+								<label class="checkbox-inline">
+								  <input type="radio" ng-model="userData.gender" value="female"> Female
+								</label>
+						</div>
+						<label for="" class="col-sm-2 control-label">Date of birth</label>
+						<div class="col-sm-4">
+						  <div class="input-group">
+						    <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="projectMonth">
+						    <span class="input-group-btn">
+						      <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+						    </span>
+						  </div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-4">
+							<input type="email" class="form-control" ng-model="userData.email" placeholder="Email">
+						</div>
+						<label class="col-sm-2 control-label">Mobile <small>whatsapp</small></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.whatsapp" placeholder="Whatsapp number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Occupation</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.occupation" placeholder="Occupation">
+						</div>
+					</div>
+				</div>
+				<div class="form-horizontal">
+					<!-- End Personal Details -->
+					<!-- Address -->
+					<h3 class="page-header">Address</h3>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Address Line 1</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.address1" placeholder="Address Line 1">
+						</div>
+						<label class="col-sm-2 control-label">Address Line 2</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.address2" placeholder="Address Line 2">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">City</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.city" placeholder="City">
+						</div>
+						<label class="col-sm-2 control-label">District</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.district" placeholder="District">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">State</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.state" placeholder="State">
+						</div>
+						<label class="col-sm-2 control-label">Pin Code</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" ng-model="userData.pin" placeholder="Pin Code">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Country</label>
+						<div class="col-sm-4">
+							<p class="form-control-static">India</p>
+						</div>
+						<label class="col-sm-2 control-label">Live Abroad</label>
+						<div class="col-sm-4">
+							<div class="checkbox">
+							  <label>
+									<input type="checkbox" ng-model="userData.liveAbroad"> Yes
+							  </label>
+							</div>						
+						</div>
+					</div>
+					<div ng-if="userData.liveAbroad">
+						<h4 class="page-header">Residential Address</h4>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Address Line 1</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.address1" placeholder="Address Line 1">
+							</div>
+							<label class="col-sm-2 control-label">Address Line 2</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.address2" placeholder="Address Line 2">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">City</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.city" placeholder="City">
+							</div>
+							<label class="col-sm-2 control-label">District</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.district" placeholder="District">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">State</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.state" placeholder="State">
+							</div>
+							<label class="col-sm-2 control-label">Post Code</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.pin" placeholder="Pin Code">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Country</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.residence.country" placeholder="Country">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3 class="page-header">Social details</h3>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Introduced By</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" ng-model="userData.introduced" placeholder="Introduced By">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-12 control-label">Select WhatsApp groups interested to join:</label>
+						<label ng-repeat="group in groups" class="checkbox-inline">
+							<input type="checkbox" name="selectedFruits[]" value="{{group}}" ng-checked="selection.indexOf(group) > -1" ng-click="toggleSelection(group)"> {{group}}
+						</label> 
+						<!-- second method json from userData.griups
+						<label ng-repeat="group in userData.groups" class="checkbox-inline">
+							<input type="checkbox" name="selectedGroup[]" value="{{groupName}}" ng-model="group.selected"> {{group.name}}
+						</label> 
+						-->
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="./bower_components/angular/angular.min.js"></script>
+		<script src="./bower_components/angular-route/angular-route.min.js"></script>
+		<script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="js/core.js"></script>
+	</body>
+</html>
