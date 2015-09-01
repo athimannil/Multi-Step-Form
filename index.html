@@ -34,101 +34,118 @@
 				<div class="col-sm-12">
 					<h3>Vaidhyasala Whatsapp group registration form</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maxime excepturi vitae error libero perspiciatis accusamus nemo odit ipsum consectetur nulla assumenda explicabo unde, dolores iste possimus, vel distinctio quis.</p>
+					<pre>{{userData | json}}</pre>
 				</div>
 			</div>
-			<form ng-submit="addUser();">
-				<div class="form-horizontal">
-					<h3 class="page-header">Personal details</h3>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">First Name</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.firstName" placeholder="First Name">
-						</div>
-						<label class="col-sm-2 control-label">Last Name</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.lastName" placeholder="Last Name">
-						</div>
+
+			<div class="row" ng-switch on="step">
+				<form ng-submit="addUser();">
+					<div class="col-md-12" ng-switch-default>
+						<h1>Step 1</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dignissimos illo rerum natus voluptates molestiae, eaque quod ea sapiente libero, ex perspiciatis in sed, quidem nam. Minima sit voluptatem vitae! ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aperiam odio accusantium, corrupti ex magnam inventore incidunt, libero quae, quo nisi vel amet omnis deleniti impedit nemo adipisci quod odit. ipsum dolor sit amet, consectetur adipisicing elit. Autem non inventore quas corporis aliquam minus incidunt error laboriosam expedita in deleniti rem, quo tempora soluta. Qui ex harum quia natus. ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aliquam vitae facere corporis reprehenderit dolor earum ipsam harum iure dolorem excepturi, quod aliquid ipsa. Vitae praesentium esse non, voluptates? Commodi.</p>
+						<button type="button" class="btn btn-primary" ng-click="switchForm('personal')">Next Step 2</button>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Gender</label>
-						<div class="col-sm-4">
-								<label class="checkbox-inline">
-								  <input type="radio" ng-model="userData.gender" value="male"> Male
-								</label>
-								<label class="checkbox-inline">
-								  <input type="radio" ng-model="userData.gender" value="female"> Female
-								</label>
-						</div>
-						<label for="" class="col-sm-2 control-label">Date of birth</label>
-						<div class="col-sm-4">
-						  <div class="input-group">
-						    <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="projectMonth">
-						    <span class="input-group-btn">
-						      <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-						    </span>
-						  </div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Email</label>
-						<div class="col-sm-4">
-							<input type="email" class="form-control" ng-model="userData.email" placeholder="Email">
-						</div>
-						<label class="col-sm-2 control-label">Mobile <small>whatsapp</small></label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.whatsapp" placeholder="Whatsapp number">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Occupation</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.occupation" placeholder="Occupation">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">City</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.city" placeholder="City">
-						</div>
-						<label class="col-sm-2 control-label">Country</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" ng-model="userData.country" placeholder="Country">
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3 class="page-header">Social details</h3>
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label class="col-sm-2 control-label">Introduced By</label>
-							<div class="col-sm-4">
-								<input type="text" class="form-control" ng-model="userData.introduced" placeholder="Introduced By">
+					<div class="col-md-12" ng-switch-when="personal">
+						<div class="form-horizontal">
+							<h3 class="page-header">Personal details</h3>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">First Name</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.firstName" placeholder="First Name">
+								</div>
+								<label class="col-sm-2 control-label">Last Name</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.lastName" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Gender</label>
+								<div class="col-sm-4">
+										<label class="checkbox-inline">
+										  <input type="radio" ng-model="userData.gender" value="male"> Male
+										</label>
+										<label class="checkbox-inline">
+										  <input type="radio" ng-model="userData.gender" value="female"> Female
+										</label>
+								</div>
+								<label for="" class="col-sm-2 control-label">Date of birth</label>
+								<div class="col-sm-4">
+								  <div class="input-group">
+								    <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="projectMonth">
+								    <span class="input-group-btn">
+								      <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+								    </span>
+								  </div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Email</label>
+								<div class="col-sm-4">
+									<input type="email" class="form-control" ng-model="userData.email" placeholder="Email">
+								</div>
+								<label class="col-sm-2 control-label">Mobile <small>whatsapp</small></label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.whatsapp" placeholder="Whatsapp number">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Occupation</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.occupation" placeholder="Occupation">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">City</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.city" placeholder="City">
+								</div>
+								<label class="col-sm-2 control-label">Country</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="userData.country" placeholder="Country">
+								</div>
 							</div>
 						</div>
+						<button type="button" class="btn btn-primary pull-left" ng-click="switchForm('')">Back</button>
+						<button type="button" class="btn btn-primary pull-right" ng-click="switchForm('social')">Next Step 3</button>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-12 control-label">Select WhatsApp groups interested to join:</label>
-						<label ng-repeat="group in groups" class="checkbox-inline">
-							<input type="checkbox" name="selectedFruits[]" value="{{group}}" ng-checked="selection.indexOf(group) > -1" ng-click="toggleSelection(group)"> {{group}}
-						</label> 
+					<div class="col-md-12" ng-switch-when="social">
+						<div>
+							<h3 class="page-header">Social details</h3>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Introduced By</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" ng-model="userData.introduced" placeholder="Introduced By">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-12 control-label">Select WhatsApp groups interested to join:</label>
+								<label ng-repeat="group in groups" class="checkbox-inline">
+									<input type="checkbox" name="selectedFruits[]" value="{{group}}" ng-checked="selection.indexOf(group) > -1" ng-click="toggleSelection(group)"> {{group}}
+								</label> 
 
-						<label ng-repeat="group in groups" class="checkbox-inline">
-							<input type="checkbox" name="selectedFruits[]" value="{{group}}" ng-checked="selection.indexOf(group) > -1" ng-click="toggleSelection(group)"> {{group}}
-						</label>
-						<hr>
-						<hr>
-						<label ng-repeat="group in groups" class="checkbox-inline btn btn-primary">
-							{{group}} <input type="checkbox" id="primary" class="badgebox">
-							<span class="badge">&check;</span>
-						</label>
-						<!-- second method json from userData.griups
-						<label ng-repeat="group in userData.groups" class="checkbox-inline">
-							<input type="checkbox" name="selectedGroup[]" value="{{groupName}}" ng-model="group.selected"> {{group.name}}
-						</label> 
-						-->
+								<label ng-repeat="group in groups" class="checkbox-inline">
+									<input type="checkbox" name="selectedFruits[]" value="{{group}}" ng-checked="selection.indexOf(group) > -1" ng-click="toggleSelection(group)"> {{group}}
+								</label>
+								<hr>
+								<hr>
+								<label ng-repeat="group in groups" class="checkbox-inline btn btn-primary">
+									{{group}} <input type="checkbox" id="primary" class="badgebox">
+									<span class="badge">&check;</span>
+								</label>
+								<!-- second method json from userData.griups
+								<label ng-repeat="group in userData.groups" class="checkbox-inline">
+									<input type="checkbox" name="selectedGroup[]" value="{{groupName}}" ng-model="group.selected"> {{group.name}}
+								</label> 
+								-->
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary" ng-click="switchForm('personal')">Back</button>
+						<button type="button" class="btn btn-primary">Finish</button>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 		<script src="./bower_components/angular/angular.min.js"></script>
 		<script src="./bower_components/angular-route/angular-route.min.js"></script>

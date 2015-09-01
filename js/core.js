@@ -9,39 +9,6 @@ var app = angular.module('myApp', []);
       });*/
     // app.controller('registrationController', ['$scope', function registrationController($scope) {
     app.controller('registrationController', function($scope) {
-      /* group names comming from user data
-      $scope.userData = {
-        "groups" : [
-          {
-            "name" : "Admin Group",
-            "selected" : false
-          }, {
-            "name" : "UAE Group",
-            "selected" : true
-          }, {
-            "name" : "UK Group",
-            "selected" : true
-          }, {
-            "name" : "Malasia Group",
-            "selected" : true
-          }, {
-            "name" : "America Group",
-            "selected" : false
-          }, {
-            "name" : "Bahrain Group",
-            "selected" : true
-          }, {
-            "name" : "Yemen Group",
-            "selected" : true
-          }, {
-            "name" : "Qatar Group",
-            "selected" : true
-          }, {
-            "name" : "Oman Group",
-            "selected" : true
-          }
-        ]
-      };*/
       $scope.userData = {
         "groups" : []
       };
@@ -58,4 +25,13 @@ var app = angular.module('myApp', []);
           $scope.userData.groups.push(groupName);
         }
       };
+
+
+      $scope.step = "introduction";
+      $scope.switchForm = function(stage){
+        console.log(stage);
+        $scope.step = stage;
+      };
+
+
     });
