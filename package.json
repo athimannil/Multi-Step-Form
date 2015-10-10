@@ -1,0 +1,27 @@
+{
+  "name": "vaidhyasala",
+  "version": "1.0.0",
+  "description": "Vaidhyasala registration multi step form",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/athimannil/Multi-Step-Form.git"
+  },
+  "author": "Muhammed Athimannil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athimannil/Multi-Step-Form/issues"
+  },
+  "homepage": "https://github.com/athimannil/Multi-Step-Form",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
